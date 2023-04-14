@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en"> 
+  <head>
+    <meta charset="UTF-8" />
+    <title>Webshop</title>
+	<link rel="stylesheet" href="styles/styles.css">
+	<script src="scripts/data.js"></script>
+    <script defer src="scripts/script.js"></script>    
+  </head>
+  <body>
+    <div class="grid-container">
+		<div class="grid-item1">
+			<div class="nested-grid1">
+				<div class="logo">
+					<img src="images/logo.png" alt="Slika">
+				</div>
+			</div>
+		</div>
+		<div class="grid-item2">
+			<div class="nested-grid2">
+				<div class="katNaslov">
+					<h1>
+						željezarija
+					</h1>
+				</div>
+				<div class id="kosarica">
+					<button id="btn_kosarica"></button>					
+				</div>
+				<div class id="povecalo">
+					<button id="btn_povecalo"></button>
+				</div>
+			</div>
+		</div>
+		<nav class="grid-item3">
+			<nav class="nested-grid3">
+				<nav class="kategorije">
+					<button id="btn_kat1" onclick="uploadData('Vijci, imbusi i tiple')">Vijci, imbusi i tiple</button>
+					<button id="btn_kat2" onclick="uploadData('Kliješta')">Kliješta</button>
+					<button id="btn_kat3" onclick="uploadData('Odvijači')">Odvijači</button>
+					<button id="btn_kat4" onclick="uploadData('Bušilice i svrdla')">Bušilice i svrdla</button>
+					<button id="btn_kat5" onclick="uploadData('Žice i užad')">Žice i užad</button>
+					<button id="btn_kat6" onclick="uploadData('Protuprovalna zaštita')">Protuprovalna zaštita</button>
+					<button id="btn_kat7" onclick="uploadData('Zaštita od požara')">Zaštita od požara</button>
+					<button id="btn_kat8" onclick="uploadData('Znakovi')">Znakovi</button>
+					<button id="btn_kat9" onclick="uploadData('Ljestve')">Ljestve</button>
+					<button id="btn_kat10" onclick="uploadData('Građevinska kolica')">Građevinska kolica</button>
+				</nav>
+				<div class="mail">
+					<li><a href="#">Kontakt</a></li>
+					<li><a href="#">Newsletter</a></li>
+					<li><a href="#">Pretplati se</a></li>
+				</div>
+			</nav>  
+		</nav>
+		<div class="grid-item4">
+
+			<div class="nested-grid4">
+				<div class="pozdrav">
+					<img src="images/aa.jpg" alt="Slika">
+					
+					<div class="pozdrav-overlay">
+						<h3>Pozdrav!</h3>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="grid-item5">
+			<div class="proizvodi">								
+			</div>
+		</div>		
+	  </div>
+  </body>
+</html>
