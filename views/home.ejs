@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en"> 
+  <head>
+    <meta charset="UTF-8" />
+    <title>Webshop</title>
+	<link rel="stylesheet" href="/styles/styles.css">  
+  <script defer src="/scripts/script.js"></script>  
+  </head>
+  <body>
+    <div class="grid-container">
+
+      
+      <%- include("partials/header.ejs"); -%>
+
+      <nav class="grid-item3">
+        <nav class="nested-grid3">
+          <nav class="kategorije">
+            <button class="btn" onclick="uploadData('Vijci, imbusi i tiple')">Vijci, imbusi i tiple</button>
+            <button class="btn" onclick="uploadData('Kliješta')">Kliješta</button>
+            <button class="btn" onclick="uploadData('Odvijači')">Odvijači</button>
+            <button class="btn" onclick="uploadData('Bušilice i svrdla')">Bušilice i svrdla</button>
+            <button class="btn" onclick="uploadData('Žice i užad')">Žice i užad</button>
+            <button class="btn" onclick="uploadData('Protuprovalna zaštita')">Protuprovalna zaštita</button>
+            <button class="btn" onclick="uploadData('Zaštita od požara')">Zaštita od požara</button>
+            <button class="btn" onclick="uploadData('Znakovi')">Znakovi</button>
+            <button class="btn" onclick="uploadData('Ljestve')">Ljestve</button>
+            <button class="btn" onclick="uploadData('Građevinska kolica')">Građevinska kolica</button>
+          </nav>
+          <div class="mail">
+            <li><a href="#">Kontakt</a></li>
+            <li><a href="#">Newsletter</a></li>
+            <li><a href="#">Pretplati se</a></li>
+          </div>
+        </nav>  
+      </nav>
+
+
+      <div class="grid-item4">
+
+        <div class="nested-grid4">
+          <div class="pozdrav">
+            <img src="/images/aa.jpg" alt="Slika">
+            
+            <div class="pozdrav-overlay">
+              <h3>Pozdrav!</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-item5">
+        <div class="proizvodi">								
+        </div>
+      </div>	
+
+      
+
+     
+
+    </div>
+    
+   
+
+  </body>
+  <footer>
+    <%- include('partials/footer.ejs'); %>
+  </footer>
+
+</html>

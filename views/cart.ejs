@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Webshop</title>
+	<link rel="stylesheet" href="/styles/stylesCart.css">	
+    <script src="/scripts/script2.js"></script>    
+  </head>
+  <body>
+    <div class="grid-container">
+		
+        <%- include("partials/header.ejs"); -%>
+
+
+        <div class="kosarica_naslov">
+            <h1>
+                KOŠARICA
+            </h1>
+        </div>
+        <div class="grid-kosarica">            
+            <div class="naziv">
+                <div class="naziv_naslov">
+                    naziv
+                </div>
+            </div>
+            <div class="kolicina">
+                <div class="kol_naslov">
+                    količina
+                </div>               
+            </div>
+        </div>
+       
+    </div>
+
+    
+
+  </body>
+  <footer>
+    <%- include('partials/footer.ejs'); %>
+  </footer>
+  
+</html>
