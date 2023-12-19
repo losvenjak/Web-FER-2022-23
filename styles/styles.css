@@ -1,70 +1,28 @@
-
 @media screen and (min-width: 1024px) {
 
-.grid-container {
+  .grid-container {
     display: grid;
     background-color: #ccc;
     grid-template-columns: 1fr 10fr; 
     grid-template-rows: 100px; 
     overflow: auto;
   }  
+
   .grid-item1 {
     background-color: #ccc;   
     padding: 10px;    
-  }
-  .nested-grid1 {
-    display: grid;
-    background-color: #ccc;    
-    grid-template-rows: 80px;
-  }
-  .logo {    
-    background-color: #ccc;
-    padding: auto;   
-  }
+  }   
+
   .logo img {
     width: 100%;
     height: 100%;    
   }
+
   .grid-item2 {
     background-color: #ccc;    
     padding: 10px;    
-  }
-  .nested-grid2 {
-    background-color: #ccc;
-    display: grid;
-    column-gap: 10px;
-    grid-template-columns: 10fr 1fr 1fr; 
-    grid-template-rows: 80px; 
-  }
-  .katNaslov {
-    font-family: Arial, Helvetica, sans-serif;
-    color:  black;    
-    text-align: left; 
-  }
-  .kosarica {
-    background-color: transparent;
-    background-color: #ccc;
-    position: relative;
-    grid-column-start: 2;
-    grid-column-end: 3;
-    grid-row-start: 1;
-    grid-row-end: 2;
-  }
-  .kosarica img {
-    height: 100%;
-  }
-  .povecalo {
-    background-color: transparent;
-    background-color: #ccc;
-    grid-column-start: 3;
-    grid-column-end: 4;
-    grid-row-start: 1;
-    grid-row-end: 2;
-    position: relative;    
-  }
-  .povecalo img {
-    height: 100%;
-  }
+  }  
+
   .grid-item3 {
     background-color: #ccc;    
     padding: 10px;
@@ -73,20 +31,14 @@
     grid-row-start: 2;
     grid-row-end: 4;
   }
+
   .nested-grid3 {
     display: grid;
     row-gap: 10px;
     background-color: #ccc;
     grid-template-rows: 9fr 1fr; 
-  }
-  .kategorije {
-    background-color: #caa7a7;   
-    padding: 10px;
-  }
-  .mail {
-    background-color: #d6aeae;    
-    padding: 10px;
-  }
+  }   
+
   .grid-item4 {
     background-color: #ccc;    
     padding: 10px;
@@ -94,31 +46,6 @@
     grid-column-end: 3;
     grid-row-start: 2;
     grid-row-end: 3;
-  }
-
-  .nested-grid4 {
-    display: grid;
-    row-gap: 10px;
-    background-color: #ccc;
-    grid-template-rows: 300px ; 
-  }
-  .pozdrav {
-    background-color: #ccc;
-    position: relative;
-  }
-  .pozdrav img {
-    width: 100%;
-    height: 100%;
-    display: block;
-  }
-  .pozdrav-overlay {
-    position: absolute;
-    font-family: Arial, Helvetica, sans-serif;
-  top: 35%;
-  left: 5%;    
-  color:  #caa7a7;
-  text-align: center;
-  font-size: 40px;
   }
 
   .grid-item5 {
@@ -129,6 +56,7 @@
     grid-row-start: 3;
     grid-row-end: 4;
   }
+
   .proizvodi {
     display: grid;
     background-color: #ccc;    
@@ -136,306 +64,203 @@
     grid-template-columns: 1fr 1fr 1fr 1fr;
     column-gap: 10px;
   }
-  .proizvodi img {
-    width: 100%;
+}
+
+@media screen and (max-width: 1023.999px) {
+  .grid-container {
+    display: grid;
+    background-color: #ccc;
+    grid-template-columns: 1fr 1fr 1fr; 
+    grid-template-rows: 100px 100px; 
+    overflow: auto;
+  }     
+
+  .grid-item1 {
+    background-color: #ccc;        
     padding: 10px;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;       
+  } 
+
+  .logo img {        
+    height: 100%;   
+  }
+
+  .grid-item2 {
+    background-color: #ccc;        
+    padding: 10px;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 3;        
+  }
+
+  .katNaslov {            
+    top: 10%;   
+  }       
+
+  .grid-item3 {
+    background-color: #ccc;        
+    padding: 10px;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 4;
+    grid-row-end: 5;
+  }
+
+  .nested-grid3 {
+    background-color: #ccc;
+    display: grid;
+    row-gap: 10px;        
+    grid-template-rows: 6fr 1fr;
+  }  
+
+  .grid-item4 {
+    background-color: #ccc;       
+    padding: 10px;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 3;
+    grid-row-end: 4;
+  }
+
+  .grid-item5 {
+    background-color: #ccc;
+    padding: 10px;
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row-start: 4;
+    grid-row-end: 5;
+  }
+
+  .proizvodi {
+    display: grid;
+    background-color: #ccc;        
+    padding: 10px;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 10px;
   }
 }
 
-
-@media screen and (max-width: 1023.999px) {
-    .grid-container {
-        display: grid;
-        background-color: #ccc;
-        grid-template-columns: 1fr 1fr 1fr; 
-        grid-template-rows: 100px 100px; 
-        overflow: auto;
-      }      
-      .grid-item1 {
-        background-color: #ccc;        
-        padding: 10px;
-        grid-column-start: 1;
-        grid-column-end: 2;
-        grid-row-start: 1;
-        grid-row-end: 2;       
-      }    
-      .nested-grid1 {
-        display: grid;
-        background-color: #ccc;        
-        grid-template-rows: 80px; 
-      }
-    
-      .logo {        
-        padding: auto;
-        background-color: #ccc;
-      }    
-      .logo img {        
-        height: 100%;   
-      }
-      .grid-item2 {
-        background-color: #ccc;        
-        padding: 10px;
-        grid-column-start: 1;
-        grid-column-end: 4;
-        grid-row-start: 2;
-        grid-row-end: 3;        
-      }
-    
-      .nested-grid2 {
-        background-color: #ccc;
-        display: grid;
-        column-gap: 10px;
-        grid-template-columns: 10fr 1fr 1fr; 
-        grid-template-rows: 80px; 
-      }
-      .katNaslov {
-        font-family: Arial, Helvetica, sans-serif;
-          color: black;          
-          text-align: left;
-          top: 10%;   
-      }
-      .kosarica {
-        background-color: transparent;
-        background-color: #ccc;
-        position: relative;
-        grid-column-start: 2;
-        grid-column-end: 3;
-        grid-row-start: 1;
-        grid-row-end: 2;        
-      }    
-      .kosarica img {        
-        height: 100%;     
-      }
-      .povecalo {
-        background-color: transparent;
-        background-color: #ccc;
-        grid-column-start: 3;
-        grid-column-end: 4;
-        grid-row-start: 1;
-        grid-row-end: 2;
-        position: relative;        
-      }
-      .povecalo img {        
-        height: 100%;        
-      }    
-      .grid-item3 {
-        background-color: #ccc;        
-        padding: 10px;
-        grid-column-start: 1;
-        grid-column-end: 2;
-        grid-row-start: 4;
-        grid-row-end: 5;
-      }    
-      .nested-grid3 {
-        background-color: #ccc;
-        display: grid;
-        row-gap: 10px;        
-        grid-template-rows: 6fr 1fr;
-      }    
-      .kategorije {
-        background-color: #caa7a7;       
-        padding: 10px;
-      }    
-      .mail {
-        background-color: #d6aeae;        
-        padding: 10px;
-      }
-      .grid-item4 {
-        background-color: #ccc;       
-        padding: 10px;
-        grid-column-start: 1;
-        grid-column-end: 4;
-        grid-row-start: 3;
-        grid-row-end: 4;
-      }
-    
-      .nested-grid4 {
-        background-color: #ccc;
-        display: grid;
-        row-gap: 10px;        
-        grid-template-rows: 300px ;
-      }    
-      .pozdrav {
-        background-color: #ccc;     
-        position: relative;
-      }
-      .pozdrav img {
-        width: 100%;
-        height: 100%;
-        display: block;
-      }
-    
-      .pozdrav-overlay {
-        position: absolute;
-      top: 35%;
-      left: 5%;        
-      color: #caa7a7;
-      text-align: center;
-      font-size: 40px;
-      font-family: Arial, Helvetica, sans-serif;    
-      }
-      .grid-item5 {
-        background-color: #ccc;
-        padding: 10px;
-        grid-column-start: 2;
-        grid-column-end: 4;
-        grid-row-start: 4;
-        grid-row-end: 5;
-      }
-      .proizvodi {
-        display: grid;
-        background-color: #ccc;        
-        padding: 10px;
-        grid-template-columns: 1fr 1fr;
-        column-gap: 10px;
-      }    
-      .proizvodi img {
-        width: 100%;
-        padding: 10px;
-      }
+.nested-grid1 {
+  display: grid;
+  background-color: #ccc;    
+  grid-template-rows: 80px;
 }
 
-#btn_kat1 {
-    background-color: transparent;
-    color: black; 
-    border: transparent;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight:600; 
-    cursor: pointer; 
-    padding: 12px 25px;
-    width: 100%;
-    height: auto;
+.logo {    
+  background-color: #ccc;
+  padding: auto;   
 }
-#btn_kat2 {
-    background-color: transparent;
-    color: black; 
-    border: transparent;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight:600; 
-    cursor: pointer; 
-    padding: 12px 25px;
-    width: 100%;
+
+.nested-grid2 {
+  background-color: #ccc;
+  display: grid;
+  column-gap: 10px;
+  grid-template-columns: 10fr 1fr; 
+  grid-template-rows: 80px; 
 }
-#btn_kat3 {
-    background-color: transparent;
-    color: black; 
-    border: transparent;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight:600; 
-    cursor: pointer; 
-    padding: 12px 25px;
-    width: 100%;
+
+.katNaslov {
+  font-family: Arial, Helvetica, sans-serif;
+  color:  black;    
+  text-align: left; 
 }
-#btn_kat4 {
-    background-color: transparent;
-    color: black; 
-    border: transparent;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight:600; 
-    cursor: pointer; 
-    padding: 12px 25px;
-    width: 100%;
+
+.kosarica {
+  background-color: transparent;
+  background-color: #ccc;
+  position: relative;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
 }
-#btn_kat5 {
-    background-color: transparent;
-    color: black; 
-    border: transparent;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight:600; 
-    cursor: pointer; 
-    padding: 12px 25px;
-    width: 100%;
+
+.btn_kosarica {
+  border-radius: 7px;
+  border: none;
 }
-#btn_kat6 {
+
+.kosarica img {
+  height: 100%;
+}
+
+.kategorije {
+  background-color: #caa7a7;   
+  padding: 10px;
+}
+
+.nested-grid4 {
+  display: grid;
+  row-gap: 10px;
+  background-color: #ccc;
+  grid-template-rows: 300px ; 
+}
+
+.pozdrav {
+  background-color: #ccc;
+  position: relative;
+}
+
+.pozdrav img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.mail {
+  background-color: #d6aeae;    
+  padding: 10px;
+}
+
+.pozdrav-overlay {
+  position: absolute;
+  font-family: Arial, Helvetica, sans-serif;
+  top: 35%;
+  left: 5%;    
+  color:  #caa7a7;
+  text-align: center;
+  font-size: 40px;
+}
+
+.proizvodi img {
+  width: 100%;
+  padding: 10px;
+}
+
+.btn {
   background-color: transparent;
   color: black; 
-  border: transparent;
+  border: none;
   font-family: Arial, Helvetica, sans-serif;
   font-weight:600; 
   cursor: pointer; 
   padding: 12px 25px;
   width: 100%;
+  transition: background-color 0.3s ease;
+  border-radius: 7px; 
 }
-#btn_kat7 {
-  background-color: transparent;
-  color: black; 
-  border: transparent;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight:600; 
-  cursor: pointer; 
-  padding: 12px 25px;
-  width: 100%;
+
+.btn:hover {
+  background-color: #ccc;
 }
-#btn_kat8 {
-  background-color: transparent;
-  color: black; 
-  border: transparent;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight:600; 
-  cursor: pointer; 
-  padding: 12px 25px;
-  width: 100%;
-}
-#btn_kat9 {
-  background-color: transparent;
-  color: black; 
-  border: transparent;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight:600; 
-  cursor: pointer; 
-  padding: 12px 25px;
-  width: 100%;
-}
-#btn_kat10 {
-  background-color: transparent;
-  color: black; 
-  border: transparent;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight:600; 
-  cursor: pointer; 
-  padding: 12px 25px;
-  width: 100%;
-}
+
 .myDiv {
   display: grid;
   padding: 10px;
   grid-template-rows: 5fr 1fr;
   row-gap: 10px;
 }
+
 .myDiv img {
   width: 100%;
   padding: 10px;
   position: relative;
 }
 
-#btn_kosarica {
-  background-color: transparent;
-  background-image: url('../images/ko.png');
-  color: black; 
-  border: transparent;
-  font-family: Arial, Helvetica, sans-serif;
-   font-weight:600; 
-    cursor: pointer;             
-   background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  padding: 37px 70px;
-    width: 100%;
-}
-#btn_povecalo {
-  background-color: transparent;
-  background-image: url('../images/pov.jpg'); 
-  color: black; 
-  border: transparent;
-  font-family: Arial, Helvetica, sans-serif;
-   font-weight:600; 
-    cursor: pointer; 
-background-repeat: no-repeat;
-background-position: center center;
-  background-size: cover;
- padding: 37px 80px;
-  width: 100%;
-}
 .cartImg {
   position: relative;
   top: 0;
@@ -444,9 +269,11 @@ background-position: center center;
   z-index: 1;
   opacity: 0.8;
 }
+
 .myIcon {
   position: relative;
 }
+
 .circle{  
   display: none;
   background-color: #caa7a7;
@@ -457,7 +284,7 @@ background-position: center center;
   justify-content: center;
   align-items: center;  
 }
-
+    
 .circle2{  
   display: none;
   background-color: #caa7a7;
@@ -468,3 +295,27 @@ background-position: center center;
   justify-content: center;
   align-items: center;  
 }
+
+#btn_kosarica {
+  background-color: transparent;
+  background-image: url('../images/ko.png');
+  color: black; 
+  border: transparent;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight:600; 
+  cursor: pointer;             
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  padding: 37px 70px;
+  width: 100%;
+}
+
+footer {        
+  bottom: 0;
+  font-size: small;
+  position: relative;
+  left: 10px;  
+}
+
+    
