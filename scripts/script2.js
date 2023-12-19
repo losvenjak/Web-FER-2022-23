@@ -1,87 +1,110 @@
-
 var cartItems = {};
 var kljuc;
 var count = 0;
+
 document.addEventListener("DOMContentLoaded", function() {
     const nazivDiv = document.querySelector('.naziv');
     const kolicinaDiv = document.querySelector('.kolicina');
-    const params = new URLSearchParams(window.location.search);
-    for (let [key, value] of params.entries()) {
-        count += parseInt(value);
-        cartItems[key] = value;
-    }
-    updateCart();
-    var i = 0;
-    for(let [key, value] of Object.entries(cartItems)) {
-        i++;
-        const artikl = document.createElement("div");
-        artikl.textContent = key;
-        kljuc = key;      
-        const kol = document.createElement("div");
-        kol.id = i;
-        kol.textContent = value; 
-        nazivDiv.appendChild(artikl);
-        const btn_minus = document.createElement('button');
-        const btn_plus = document.createElement('button');        
-        btn_plus.name = 'btn_plus';    
-        btn_minus.name = 'btn_minus';
-        btn_plus.id = key;
-        btn_minus.id = key;
-        kolicinaDiv.appendChild(btn_minus);
-        kolicinaDiv.appendChild(kol);
-        kolicinaDiv.appendChild(btn_plus);   
+    
+    fetch('/cart/getAll')
+    .then(response => response.json())
+    .then(data => {
+        data.forEach((podatak) => {
+            count += 1;
+            if(!cartItems[podatak]){
+                cartItems[podatak] = 1;
+            }
+            else {
+                cartItems[podatak] = cartItems[podatak] + 1;
+            }            
+        });
+        updateCart();
+        var i = 0;
+        for(let [key, value] of Object.entries(cartItems)) {
+            i++;
+            const artikl = document.createElement("div");
+            artikl.textContent = key;
+            kljuc = key;      
+            const kol = document.createElement("div");
+            kol.id = i;
+            kol.textContent = value; 
+            nazivDiv.appendChild(artikl);
+            const btn_minus = document.createElement('button');
+            const btn_plus = document.createElement('button');        
+            btn_plus.name = 'btn_plus';    
+            btn_minus.name = 'btn_minus';
+            btn_plus.id = key;
+            btn_minus.id = key;
+            kolicinaDiv.appendChild(btn_minus);
+            kolicinaDiv.appendChild(kol);
+            kolicinaDiv.appendChild(btn_plus);   
+        }
+    })
+    .then( () => {
+
+        const buttons = document.getElementsByName("btn_minus");
+    
+        const buttons2 = document.getElementsByName("btn_plus");
+    
+        var j = 0;
+        for (const button of buttons2) {    
+            button.addEventListener("click", increase);          
+        }
+        for (const button of buttons) {    
+            button.addEventListener("click", decrease);          
+        }     
+    })
+    .catch(error => {
+        console.log('Greška46 ', error);
+    });
+
+    const button = document.querySelector('.logo');  
+    button.addEventListener("click", goToHome);  
+    function goToHome() {       
+          
+        window.location.href = "/home";
     }
 });
 
-document.addEventListener("DOMContentLoaded", function() {
-    const buttons = document.getElementsByName("btn_minus");
-    const buttons2 = document.getElementsByName("btn_plus");
-    const nazivDiv = document.querySelector('.naziv');
-    const kolicinaDiv = document.querySelector('.kolicina');
-    var j = 0;
-    for (const button of buttons2) {    
-        button.addEventListener("click", increase);          
+
+function increase() {
+    j = 0;
+    cartItems[this.id]++;        
+    for(let [key, value] of Object.entries(cartItems)) {
+        j++;
+        if(key===this.id)
+            break;           
     }
-    for (const button of buttons) {    
-        button.addEventListener("click", decrease);          
-    }
-    function increase() {
-        j = 0;
-        cartItems[this.id]++;        
+    fetch(`/cart/add/${this.id}`, {method: 'POST',});
+    kol = document.getElementById(j);
+    kol.textContent = cartItems[this.id];
+    count++;
+    updateCart();    
+}
+
+function decrease() {
+    j = 0;
+    if(cartItems[this.id]>0) {
+        cartItems[this.id]--;        
         for(let [key, value] of Object.entries(cartItems)) {
             j++;
             if(key===this.id)
                 break;           
         }
+        fetch(`/cart/remove/${this.id}`, { method: 'POST' });
         kol = document.getElementById(j);
         kol.textContent = cartItems[this.id];
-        count++;
-        updateCart();
+        count--;
+        updateCart();        
     }
-    function decrease() {
-        j = 0;
-        if(cartItems[this.id]>0) {
-            cartItems[this.id]--;        
-            for(let [key, value] of Object.entries(cartItems)) {
-                j++;
-                if(key===this.id)
-                    break;           
-            }
-            kol = document.getElementById(j);
-            kol.textContent = cartItems[this.id];
-            count--
-            updateCart();
-        }
-        else {
-            return;
-        }
+    else {
+        return;
     }
-    
-  });
+}
 
-function updateCart() {
+function updateCart() {    
     
-    var kosaricaDiv = document.getElementById("kosarica2");
+    var kosaricaDiv = document.getElementById("kosarica");
     if(kosaricaDiv.hasChildNodes()) {
         kosaricaDiv.removeChild(kosaricaDiv.lastChild);
     }
@@ -99,5 +122,15 @@ function updateCart() {
     circleDiv2.appendChild(numberSpan2);
     circleDiv2.style.display = 'flex';
     circleDiv2.style.transform = 'translate(0, -150%)';
+    if(count == 0) {
+        circleDiv2.style.opacity = 0;    
+    }
 
-  }
+}
+
+
+window.addEventListener('pageshow', function(event) {
+    if (event.persisted) {
+        window.location.reload();
+    }
+});
